@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caféó | Cybercafé, Tech, Chill & Stand-up</title>
+    <!-- Tailwind CSS pour un design moderne, réactif et épuré -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat pour le côté premium/lisse et Inter pour la lisibilité -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome pour les icônes professionnelles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        title: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        neonBlue: '#38bdf8',
+                        neonRed: '#ef4444',
+                        darkBg: '#0b0d13',
+                        darkCard: '#131722',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Effet de lueur néon réaliste pour le logo et les titres importants */
+        .neon-glow-blue {
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.6), 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+        .neon-glow-red {
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.6), 0 0 20px rgba(239, 68, 68, 0.3);
+        }
+        .neon-border-blue {
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+        }
+        .neon-border-red {
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION HEADER (Minimaliste et haut de gamme style Celio) -->
+    <header class="fixed top-0 left-0 w-full bg-darkBg/90 backdrop-blur-md border-b border-white/5 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo avec écriture Caféó & accents espagnols colorés -->
+            <a href="#" class="font-title text-2xl font-extrabold tracking-wider">
+                <span class="text-neonBlue neon-glow-blue">CAFÉ</span><span class="text-neonRed neon-glow-red">Ó</span>
+            </a>
+            
+            <!-- Liens de navigation rapides (Traductions dynamiques) -->
+            <nav class="hidden lg:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="#concept" data-i18n="nav-concept" class="text-slate-300 hover:text-neonBlue transition">Le Concept</a>
+                <a href="#carte" data-i18n="nav-carte" class="text-slate-300 hover:text-neonBlue transition">La Carte</a>
+                <a href="#tech" data-i18n="nav-tech" class="text-slate-300 hover:text-neonBlue transition">Espace Tech</a>
+                <a href="#reservation" data-i18n="nav-reservation" class="text-slate-300 hover:text-neonBlue transition">Réservation</a>
+                <a href="#scenes" data-i18n="nav-scenes" class="text-slate-300 hover:text-neonRed transition">Événements &amp; Scène</a>
+                <a href="#tarifs" data-i18n="nav-tarifs" class="text-slate-300 hover:text-neonBlue transition">Nos Tarifs</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <!-- NOUVEAU : SÉLECTEUR DE LANGUE PREMIUM (FR, ES, EN) -->
+                <div class="flex items-center space-x-1 bg-white/5 p-1 rounded-full border border-white/10">
+                    <button onclick="setLanguage('fr')" id="lang-fr" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition uppercase bg-neonBlue text-darkBg">
+                        FR
+                    </button>
+                    <button onclick="setLanguage('es')" id="lang-es" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition uppercase text-slate-400 hover:text-white">
+                        ES
+                    </button>
+                    <button onclick="setLanguage('en')" id="lang-en" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition uppercase text-slate-400 hover:text-white">
+                        EN
+                    </button>
+                </div>
+
+                <!-- Bouton d'action direct étudiant -->
+                <a href="#reservation" data-i18n="btn-reserve" class="hidden sm:inline-block border border-neonBlue text-neonBlue px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider hover:bg-neonBlue hover:text-darkBg transition duration-300">
+                    Réserver un PC / Salle
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Visuel principal & Ambiance) -->
+    <section class="relative pt-32 pb-24 md:pt-40 md:pb-32 flex items-center min-h-[85vh] overflow-hidden">
+        <!-- Fond décoratif flou abstrait (Gradients) -->
+        <div class="absolute top-1/4 right-0 w-[400px] h-[400px] bg-neonBlue/10 rounded-full filter blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-[350px] h-[350px] bg-neonRed/10 rounded-full filter blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Accroche textuelle haut de gamme mais accessible -->
+            <div>
+                <span data-i18n="hero-tag" class="inline-block bg-white/5 border border-white/10 text-xs font-semibold text-neonBlue uppercase px-4 py-1.5 rounded-full tracking-wider mb-6">
+                    ⚡ L'espace hybride nouvelle génération
+                </span>
+                <h1 data-i18n="hero-title" class="font-title text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
+                    Travaillez dur. <br>
+                    <span class="text-neonBlue">Chilliez</span> en grand. <br>
+                    <span class="text-neonRed">Riez</span> souvent.
+                </h1>
+                <p data-i18n="hero-desc" class="text-slate-400 text-lg md:text-xl font-light mb-8 max-w-lg leading-relaxed">
+                    Un cybercafé premium conçu pour les étudiants : setups PC ultra-performants, salles privées insonorisées, bubble teas personnalisables et une vraie scène de Stand-up en soirée.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#carte" data-i18n="btn-discover-carte" class="bg-gradient-to-r from-neonBlue to-sky-500 text-darkBg text-center px-8 py-4 rounded-xl font-bold tracking-wide hover:opacity-90 hover:scale-[1.02] transition duration-200">
+                        Découvrir la Carte 🧋
+                    </a>
+                    <a href="#scenes" data-i18n="btn-standup" class="bg-darkCard border border-white/10 text-center text-white px-8 py-4 rounded-xl font-semibold tracking-wide hover:bg-white/5 transition duration-200">
+                        Prochaines soirées Stand-up 🎤
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image d'illustration Cyber / Café -->
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-neonRed/20 to-neonBlue/20 rounded-3xl filter blur-xl opacity-50"></div>
+                <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-darkCard/50 p-3">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop" alt="Setup Gaming Cybercafé Caféó" class="rounded-xl w-full object-cover aspect-[4/3] shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LE CONCEPT (Grille simple) -->
+    <section id="concept" class="py-20 bg-darkCard/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 data-i18n="concept-title" class="font-title text-3xl md:text-4xl font-extrabold text-white mb-4">Un lieu. Trois facettes.</h2>
+                <div class="w-16 h-1 bg-neonBlue mx-auto rounded mb-4"></div>
+                <p data-i18n="concept-subtitle" class="text-slate-400">Pourquoi choisir entre bosser, boire un coup et se divertir quand on peut tout faire au même endroit ?</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Bloc Tech -->
+                <div class="p-8 rounded-2xl bg-darkCard border border-white/5 hover:border-neonBlue/30 transition duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-neonBlue/10 flex items-center justify-center text-neonBlue text-xl mb-6">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 data-i18n="concept-tech-title" class="font-title text-xl font-bold text-white mb-3">Secteur Technique</h3>
+                    <p data-i18n="concept-tech-desc" class="text-slate-400 text-sm leading-relaxed">
+                        Des setups PC gamer équipés de cartes graphiques dernière génération et de la fibre ultra-rapide. Bossez vos cours ou lancez une partie dans des conditions parfaites.
+                    </p>
+                </div>
+
+                <!-- Bloc Food/Liquide -->
+                <div class="p-8 rounded-2xl bg-darkCard border border-white/5 hover:border-neonBlue/30 transition duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-neonBlue/10 flex items-center justify-center text-neonBlue text-xl mb-6">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <h3 data-i18n="concept-food-title" class="font-title text-xl font-bold text-white mb-3">Secteur Alimentaire</h3>
+                    <p data-i18n="concept-food-desc" class="text-slate-400 text-sm leading-relaxed">
+                        Des boissons chaudes réconfortantes, des thés glacés ultra-frais et des Bubble Teas uniques, entièrement confectionnés par nos baristas.
+                    </p>
+                </div>
+
+                <!-- Bloc Événements/Stand-up -->
+                <div class="p-8 rounded-2xl bg-darkCard border border-white/5 hover:border-neonRed/30 transition duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-neonRed/10 flex items-center justify-center text-neonRed text-xl mb-6">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <h3 data-i18n="concept-event-title" class="font-title text-xl font-bold text-white mb-3">Chill, Bar &amp; Stand-Up</h3>
+                    <p data-i18n="concept-event-desc" class="text-slate-400 text-sm leading-relaxed">
+                        Quand le soleil se couche, la lumière change. Notre bar s'active et notre mini-scène s'illumine pour accueillir de jeunes humoristes locaux pour des soirées inoubliables.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LA CARTE (BOISSONS & BUBBLE TEAS) -->
+    <section id="carte" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span data-i18n="carte-tag" class="text-neonBlue text-xs font-bold tracking-widest uppercase block mb-2">Au menu de Caféó</span>
+                <h2 data-i18n="carte-title" class="font-title text-3xl md:text-4xl font-extrabold text-white mb-4">Notre Carte Liquide</h2>
+                <div class="w-16 h-1 bg-neonBlue mx-auto rounded"></div>
+            </div>
+
+            <!-- Grille Boissons Chaudes / Boissons Froides classiques -->
+            <div class="grid md:grid-cols-2 gap-12 mb-20">
+                <!-- Boissons Chaudes -->
+                <div class="bg-darkCard p-8 rounded-2xl border border-white/5 relative overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-neonBlue/5 rounded-full filter blur-xl"></div>
+                        <h3 data-i18n="carte-hot-title" class="font-title text-2xl font-bold text-white mb-6 flex items-center gap-3 border-b border-white/5 pb-4">
+                            <span class="text-neonBlue"><i class="fa-solid fa-mug-hot"></i></span> Les Boissons Chaudes
+                        </h3>
+                        
+                        <div class="space-y-6 mb-6">
+                            <!-- Produit 1 -->
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 data-i18n="hot-p1-title" class="font-semibold text-white">Café de Spécialité / Espresso</h4>
+                                    <p data-i18n="hot-p1-desc" class="text-xs text-slate-400 mt-1">Un arabica sélectionné, aux arômes riches et ronds.</p>
+                                </div>
+                                <span class="text-neonBlue font-semibold text-sm">2,20 €</span>
+                            </div>
+                            <!-- Produit 2 -->
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 data-i18n="hot-p2-title" class="font-semibold text-white">Cappuccino Onctueux &amp; Latte Art</h4>
+                                    <p data-i18n="hot-p2-desc" class="text-xs text-slate-400 mt-1">Mousse de lait veloutée, espresso premium, motifs artistiques de chat faits main.</p>
+                                </div>
+                                <span class="text-neonBlue font-semibold text-sm">3,80 €</span>
+                            </div>
+                            <!-- Produit 3 -->
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 data-i18n="hot-p3-title" class="font-semibold text-white">Chocolat Chaud Gourmand</h4>
+                                    <p data-i18n="hot-p3-desc" class="text-xs text-slate-400 mt-1">Chocolat fondu crémeux, servi bien chaud.</p>
+                                </div>
+                                <span class="text-neonBlue font-semibold text-sm">4,20 €</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Image Latte Art Chat Intégrée -->
+                    <div class="rounded-xl overflow-hidden border border-white/5 mt-4">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=600&auto=format&fit=crop" alt="Café Latte Art mignon avec dessin de chat" class="w-full h-48 object-cover hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1517256064527-09c53b2d0c6f?q=80&w=600&auto=format&fit=crop'">
+                        <div data-i18n="latte-caption" class="p-2 text-center text-xs text-slate-400 bg-black/40">Notre fameux Latte Art signature en forme de chat 🐱</div>
+                    </div>
+                </div>
+
+                <!-- Boissons Froides / Thés Glacés -->
+                <div class="bg-darkCard p-8 rounded-2xl border border-white/5 relative overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-neonBlue/5 rounded-full filter blur-xl"></div>
+                        <h3 data-i18n="carte-cold-title" class="font-title text-2xl font-bold text-white mb-6 flex items-center gap-3 border-b border-white/5 pb-4">
+                            <span class="text-neonBlue"><i class="fa-solid fa-whiskey-glass"></i></span> Thés Glacés Maison (Cold Brew)
+                        </h3>
+                        
+                        <div class="space-y-6 mb-6">
+                            <!-- Produit 1 -->
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 data-i18n="cold-p1-title" class="font-semibold text-white">Thé Noir Signature</h4>
+                                    <p data-i18n="cold-p1-desc" class="text-xs text-slate-400 mt-1">Infusé à froid pendant 12h, agrémenté de menthe et de citron frais.</p>
+                                </div>
+                                <span class="text-neonBlue font-semibold text-sm">3,50 €</span>
+                            </div>
+                            <!-- Produit 2 -->
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 data-i18n="cold-p2-title" class="font-semibold text-white">Thé Vert Glacé Pêche</h4>
+                                    <p data-i18n="cold-p2-desc" class="text-xs text-slate-400 mt-1">Léger et délicat, à base de vrai coulis de pêche juteux.</p>
+                                </div>
+                                <span class="text-neonBlue font-semibold text-sm">3,50 €</span>
+                            </div>
+                            <!-- Produit 3 -->
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 data-i18n="cold-p3-title" class="font-semibold text-white">L'Infusion du Moment (Sans caféine)</h4>
+                                    <p data-i18n="cold-p3-desc" class="text-xs text-slate-400 mt-1">Infusion aux fruits rouges et épices douces pour l'après-midi.</p>
+                                </div>
+                                <span class="text-neonBlue font-semibold text-sm">3,50 €</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Image Thés Glacés Intégrée -->
+                    <div class="rounded-xl overflow-hidden border border-white/5 mt-4">
+                        <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=600&q=80" alt="Thés glacés maison rafraîchissants" class="w-full h-48 object-cover hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600&auto=format&fit=crop'">
+                        <div data-i18n="cold-caption" class="p-2 text-center text-xs text-slate-400 bg-black/40">Nos infusions froides bio préparées quotidiennement 🍋</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Focus Bubble Tea interactif pour l'étudiant -->
+            <div class="bg-darkCard/80 border border-white/10 rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span data-i18n="boba-tag" class="inline-block bg-neonBlue/10 text-neonBlue text-xs font-bold uppercase px-3 py-1 rounded-full mb-4">
+                        ⭐ La star des révisions
+                    </span>
+                    <h3 data-i18n="boba-title" class="font-title text-3xl font-extrabold text-white mb-4">Crée ton Bubble Tea unique</h3>
+                    <p data-i18n="boba-desc" class="text-slate-400 mb-6 leading-relaxed">
+                        Pour seulement <strong>4,80 €</strong>, customise ta boisson selon ton envie du moment. Tu choisis ta base, ton parfum, tes toppings explosives, et nos baristas s'occupent du reste.
+                    </p>
+                    
+                    <!-- Petit simulateur interactif en JS -->
+                    <div class="space-y-4 bg-darkBg/60 p-6 rounded-xl border border-white/5">
+                        <h4 data-i18n="boba-sim-title" class="text-sm font-semibold uppercase tracking-wider text-slate-300">Simulateur de Bubble Tea</h4>
+                        
+                        <div>
+                            <label data-i18n="boba-step1" class="block text-xs text-slate-400 mb-2">Étape 1 : Choisis ta Base</label>
+                            <div class="grid grid-cols-2 gap-2" id="base-selector">
+                                <button onclick="selectChoice('base', this, 'Thé Noir Lacté')" class="p-2 text-xs bg-white/5 hover:bg-neonBlue/10 border border-white/10 hover:border-neonBlue rounded-lg transition text-left active-choice">
+                                    🥛 Thé Noir Lacté
+                                </button>
+                                <button onclick="selectChoice('base', this, 'Thé Vert Sencha')" class="p-2 text-xs bg-white/5 hover:bg-neonBlue/10 border border-white/10 hover:border-neonBlue rounded-lg transition text-left">
+                                    🍵 Thé Vert Sencha
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label data-i18n="boba-step2" class="block text-xs text-slate-400 mb-2">Étape 2 : Customise tes Bobas (Billes)</label>
+                            <div class="grid grid-cols-3 gap-2" id="boba-selector">
+                                <button onclick="selectChoice('boba', this, 'Tapioca sucré')" class="p-2 text-xs bg-white/5 hover:bg-neonBlue/10 border border-white/10 hover:border-neonBlue rounded-lg transition text-center active-choice">
+                                    🧋 Tapioca
+                                </button>
+                                <button onclick="selectChoice('boba', this, 'Billes Mangue')" class="p-2 text-xs bg-white/5 hover:bg-neonBlue/10 border border-white/10 hover:border-neonBlue rounded-lg transition text-center">
+                                    🥭 Mangue
+                                </button>
+                                <button onclick="selectChoice('boba', this, 'Billes Fraise')" class="p-2 text-xs bg-white/5 hover:bg-neonBlue/10 border border-white/10 hover:border-neonBlue rounded-lg transition text-center">
+                                    🍓 Fraise
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
+                            <span data-i18n="boba-choice-label" class="text-xs text-slate-400">Votre choix :</span>
+                            <span id="bubble-tea-recipe" class="text-xs font-semibold text-neonBlue">Thé Noir Lacté + Tapioca sucré</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visuel Bubble Tea Remplacé par une superbe image stable -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=800&q=80" alt="Bubble Teas colorés et glacés de Caféó" class="rounded-2xl w-full object-cover aspect-[4/3] shadow-lg border border-white/10 hover:opacity-95 transition" onerror="this.src='https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=800&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LES SERVICES (ORDINATEURS ET SALLES PRIVÉES) -->
+    <section id="tech" class="py-24 bg-darkCard/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span data-i18n="tech-tag" class="text-neonBlue text-xs font-bold tracking-widest uppercase block mb-2">Côté Technique</span>
+                <h2 data-i18n="tech-title" class="font-title text-3xl md:text-4xl font-extrabold text-white mb-4">Espaces de Travail &amp; Performance</h2>
+                <div class="w-16 h-1 bg-neonBlue mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Ordinateurs -->
+                <div class="bg-darkCard rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="p-8 pb-4">
+                            <span data-i18n="tech-pc-tag" class="text-xs font-bold text-neonBlue uppercase tracking-wider mb-2 block">Zone Libre-Service</span>
+                            <h3 data-i18n="tech-pc-title" class="font-title text-2xl font-bold text-white mb-3">Setups PC Gaming &amp; Dev</h3>
+                            <p data-i18n="tech-pc-desc" class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Profitez de 20 postes informatiques haut de gamme. Écrans 144Hz, processeurs puissants, claviers mécaniques et souris ergonomiques. Tout est prêt pour vos rendus de projets ou vos parties de jeu.
+                            </p>
+                            <div class="flex items-center gap-2 mb-6 text-sm text-slate-300 font-medium">
+                                <i class="fa-solid fa-circle-check text-neonBlue"></i> <span data-i18n="tech-pc-feat">Accès Fibre 2 Gb/s symétrique</span>
+                            </div>
+                        </div>
+                        <div class="px-8 pb-6">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop" alt="Espace PC gaming haut de gamme" class="rounded-xl w-full h-48 object-cover border border-white/5" onerror="this.src='https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?q=80&w=600&auto=format&fit=crop'">
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 flex items-center justify-between border-t border-white/5 pt-6 bg-black/10">
+                        <div>
+                            <span data-i18n="tech-pc-price-tag" class="text-xs text-slate-400 block">Tarif étudiant</span>
+                            <span class="text-xl font-bold text-white">3,00 € <span data-i18n="tech-pc-unit" class="text-xs font-light text-slate-400">/ heure</span></span>
+                        </div>
+                        <a href="#tarifs" data-i18n="tech-pc-btn" class="bg-white/5 border border-white/10 hover:bg-neonBlue hover:text-darkBg text-white hover:border-neonBlue text-xs font-bold tracking-wider uppercase px-4 py-2.5 rounded-lg transition">
+                            Voir les packs
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Salles de réunion -->
+                <div class="bg-darkCard rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="p-8 pb-4">
+                            <span data-i18n="tech-room-tag" class="text-xs font-bold text-neonBlue uppercase tracking-wider mb-2 block">Zone Collaborative</span>
+                            <h3 data-i18n="tech-room-title" class="font-title text-2xl font-bold text-white mb-3">Salles Privées de Réunion</h3>
+                            <p data-i18n="tech-room-desc" class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Besoin de préparer un exposé à plusieurs ? Nos box insonorisés accueillent de 4 à 8 personnes et sont équipés de grands écrans connectés et de tableaux effaçables.
+                            </p>
+                            <div class="flex items-center gap-2 mb-6 text-sm text-slate-300 font-medium">
+                                <i class="fa-solid fa-circle-check text-neonBlue"></i> <span data-i18n="tech-room-feat">Système de projection sans-fil inclus</span>
+                            </div>
+                        </div>
+                        <div class="px-8 pb-6">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600&auto=format&fit=crop" alt="Salle privée de réunion insonorisée moderne" class="rounded-xl w-full h-48 object-cover border border-white/5" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop'">
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 flex items-center justify-between border-t border-white/5 pt-6 bg-black/10">
+                        <div>
+                            <span data-i18n="tech-room-price-tag" class="text-xs text-slate-400 block">Tarif de groupe</span>
+                            <span class="text-xl font-bold text-white">15,00 € <span data-i18n="tech-room-unit" class="text-xs font-light text-slate-400">/ heure</span></span>
+                        </div>
+                        <a href="#reservation" data-i18n="tech-room-btn" class="bg-white/5 border border-white/10 hover:bg-neonBlue hover:text-darkBg text-white hover:border-neonBlue text-xs font-bold tracking-wider uppercase px-4 py-2.5 rounded-lg transition">
+                            Réserver
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION RÉSERVATION INTERACTIVE (Ajout stratégique pour le projet académique) -->
+    <section id="reservation" class="py-24 bg-darkBg relative overflow-hidden">
+        <div class="absolute top-10 left-10 w-[300px] h-[300px] bg-neonBlue/5 rounded-full filter blur-[100px] pointer-events-none"></div>
+        <div class="max-w-3xl mx-auto px-6 relative z-10">
+            <div class="bg-darkCard/80 border border-white/10 rounded-3xl p-8 md:p-12">
+                <div class="text-center mb-10">
+                    <span data-i18n="res-tag" class="text-neonBlue text-xs font-bold tracking-widest uppercase block mb-2">Planifie ta session</span>
+                    <h2 data-i18n="res-title" class="font-title text-3xl font-extrabold text-white mb-4">Réserver un Espace en 1 Clic</h2>
+                    <p data-i18n="res-desc" class="text-slate-400 text-sm">Gagne du temps et assure-toi d'avoir la meilleure place pour réviser ou collaborer.</p>
+                </div>
+
+                <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label data-i18n="res-field-name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Ton Nom complet</label>
+                            <input type="text" required placeholder="Alexandre Ramirez" class="w-full bg-darkBg border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonBlue transition">
+                        </div>
+                        <div>
+                            <label data-i18n="res-field-email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Adresse Email</label>
+                            <input type="email" required placeholder="alex@univ-paris.fr" class="w-full bg-darkBg border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonBlue transition">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label data-i18n="res-field-service" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Type de service</label>
+                            <select id="booking-service" class="w-full bg-darkBg border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-300 focus:outline-none focus:border-neonBlue transition">
+                                <option value="PC">🖥️ Setup PC Solo (3,00 € / h)</option>
+                                <option value="Box4">🚪 Box Privé 4 personnes (15,00 € / h)</option>
+                                <option value="Box8">🚪 Grande Salle 8 personnes (25,00 € / h)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label data-i18n="res-field-duration" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Durée estimée</label>
+                            <select id="booking-duration" class="w-full bg-darkBg border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-300 focus:outline-none focus:border-neonBlue transition">
+                                <option value="1">1 heure</option>
+                                <option value="2">2 heures</option>
+                                <option value="3">3 heures</option>
+                                <option value="5">Demi-journée (Forfait)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 bg-white/5 border border-white/5 p-4 rounded-xl">
+                        <span class="text-neonBlue text-xl"><i class="fa-solid fa-circle-info"></i></span>
+                        <p data-i18n="res-payment-info" class="text-xs text-slate-400">Le paiement s'effectue directement sur place par CB ou Lydia lors de ton arrivée. Pas de pré-paiement requis !</p>
+                    </div>
+
+                    <button type="submit" data-i18n="res-btn-submit" class="w-full bg-gradient-to-r from-neonBlue to-sky-500 text-darkBg py-4 rounded-xl font-bold tracking-wide hover:opacity-90 transition duration-200 uppercase text-xs">
+                        Confirmer ma pré-réservation
+                    </button>
+                </form>
+
+                <!-- Message de succès fictif -->
+                <div id="booking-success" class="hidden text-center py-6 space-y-4">
+                    <div class="w-16 h-16 bg-neonBlue/10 text-neonBlue rounded-full flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 data-i18n="res-success-title" class="font-title text-xl font-bold text-white">Réservation validée !</h3>
+                    <p data-i18n="res-success-desc" class="text-sm text-slate-400 max-w-md mx-auto">Un email de confirmation contenant votre code de réservation vous a été envoyé pour le présenter au barista lors de votre arrivée.</p>
+                    <button onclick="resetBookingForm()" data-i18n="res-success-retry" class="text-xs text-neonBlue underline hover:text-white transition">Faire une autre réservation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LES SOIRÉES, LE BAR & LE STAND-UP (AVEC BANDEAU D'AVERTISSEMENT LÉGAL) -->
+    <section id="scenes" class="py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neonRed/5 rounded-full filter blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span data-i18n="scene-tag" class="text-neonRed text-xs font-bold tracking-widest uppercase block mb-2">Soirées &amp; Bar de nuit</span>
+                <h2 data-i18n="scene-title" class="font-title text-3xl md:text-4xl font-extrabold text-white mb-4">Mini-Scène, Stand-Up &amp; Bar</h2>
+                <div class="w-16 h-1 bg-neonRed mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Visuel Micro / Scène Remplacé par une image de microphone professionnelle très fiable -->
+                <div class="relative rounded-2xl overflow-hidden border border-white/10 p-3 bg-darkCard/50">
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd6a?q=80&w=800&auto=format&fit=crop" alt="Microphone sur la scène de Caféó" class="rounded-xl w-full object-cover aspect-[4/3] shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80'">
+                </div>
+
+                <!-- Descriptif Événements -->
+                <div>
+                    <h3 data-i18n="scene-desc-title" class="font-title text-3xl font-bold text-white mb-6">La Scène Découverte</h3>
+                    <p data-i18n="scene-desc-para" class="text-slate-400 leading-relaxed mb-6">
+                        Chaque semaine, Caféó se transforme en scène ouverte pour accueillir des humoristes locaux en devenir (Stand-Up), des soirées d'échanges d'idées, des rencontres e-sport de groupe et de la musique acoustique en live.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="text-neonRed mt-1"><i class="fa-solid fa-microphone"></i></span>
+                            <div>
+                                <h4 data-i18n="scene-evt1-title" class="font-semibold text-white">Jeudis Stand-Up (20h - 22h)</h4>
+                                <p data-i18n="scene-evt1-desc" class="text-xs text-slate-400">Venez découvrir les futurs talents de l'humour autour d'un cocktail ou d'un Bubble Tea.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-neonRed mt-1"><i class="fa-solid fa-beer-mug-empty"></i></span>
+                            <div>
+                                <h4 data-i18n="scene-evt2-title" class="font-semibold text-white">Bar de Nuit &amp; Rencontres Étudiantes</h4>
+                                <p data-i18n="scene-evt2-desc" class="text-xs text-slate-400">Profitez de notre licence de boissons alcoolisées et softs pour décompresser de vos journées de cours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION : CALENDRIER INTERACTIF DES ÉVÉNEMENTS -->
+            <div class="bg-darkCard/60 border border-white/10 rounded-3xl p-8 mb-16">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                    <div>
+                        <span data-i18n="cal-tag" class="text-neonBlue text-xs font-bold tracking-widest uppercase block mb-1">Le Programme</span>
+                        <h3 data-i18n="cal-title" class="font-title text-2xl font-bold text-white">Calendrier de la Semaine</h3>
+                    </div>
+                    <p data-i18n="cal-desc" class="text-slate-400 text-xs md:max-w-md">
+                        Cliquez sur les jours de la semaine pour découvrir nos soirées thématiques, scènes ouvertes et tournois organisés pour les étudiants.
+                    </p>
+                </div>
+
+                <!-- Jours de la semaine onglets -->
+                <div class="grid grid-cols-4 md:grid-cols-7 gap-2 mb-6">
+                    <button onclick="selectDay('lun')" id="btn-lun" class="py-3 px-2 rounded-xl text-center border text-xs font-semibold transition day-btn bg-neonRed/10 border-neonRed text-white active-day">
+                        Lun
+                    </button>
+                    <button onclick="selectDay('mar')" id="btn-mar" class="py-3 px-2 rounded-xl text-center border text-xs font-semibold transition day-btn bg-white/5 border-white/10 text-slate-400 hover:border-white/20">
+                        Mar
+                    </button>
+                    <button onclick="selectDay('mer')" id="btn-mer" class="py-3 px-2 rounded-xl text-center border text-xs font-semibold transition day-btn bg-white/5 border-white/10 text-slate-400 hover:border-white/20">
+                        Mer
+                    </button>
+                    <button onclick="selectDay('jeu')" id="btn-jeu" class="py-3 px-2 rounded-xl text-center border text-xs font-semibold transition day-btn bg-white/5 border-white/10 text-slate-400 hover:border-white/20">
+                        Jeu
+                    </button>
+                    <button onclick="selectDay('ven')" id="btn-ven" class="py-3 px-2 rounded-xl text-center border text-xs font-semibold transition day-btn bg-white/5 border-white/10 text-slate-400 hover:border-white/20">
+                        Ven
+                    </button>
+                    <button onclick="selectDay('sam')" id="btn-sam" class="py-3 px-2 rounded-xl text-center border text-xs font-semibold transition day-btn bg-white/5 border-white/10 text-slate-400 hover:border-white/20">
+                        Sam
+                    </button>
+                    <button onclick="selectDay('dim')" id="btn-dim" class="py-3 px-2 rounded-xl text-center border text-xs font-semibold transition day-btn bg-white/5 border-white/10 text-slate-400 hover:border-white/20">
+                        Dim
+                    </button>
+                </div>
+
+                <!-- Détails de l'événement dynamique -->
+                <div class="bg-darkBg/80 border border-white/5 rounded-2xl p-6 min-h-[160px] flex flex-col justify-between">
+                    <div id="event-content">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-neonBlue/10 text-neonBlue text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">💻 E-Sport &amp; Gaming</span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i> 18h00 - 21h30</span>
+                        </div>
+                        <h4 class="font-title text-xl font-bold text-white mb-2">Tournoi Gaming Hebdo : FC 24 &amp; Smash Bros</h4>
+                        <p class="text-sm text-slate-400">Rejoignez-nous en solo ou en groupe. Inscription gratuite sur place, canettes de soda et boissons chaudes à gagner pour le top 3 ! Matériel fourni.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bandeau de Prévention Légal Exigé -->
+            <div class="bg-neonRed/10 border border-neonRed/30 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <span class="text-2xl text-neonRed"><i class="fa-solid fa-circle-exclamation"></i></span>
+                    <div>
+                        <h4 data-i18n="legal-warning-title" class="font-semibold text-white text-sm">Avertissement Législatif Obligatoire</h4>
+                        <p data-i18n="legal-warning-desc" class="text-xs text-slate-400">L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Vente et consommation d'alcool interdites aux mineurs de moins de 18 ans.</p>
+                    </div>
+                </div>
+                <div data-i18n="legal-warning-badge" class="text-xs font-semibold text-neonRed border border-neonRed/40 px-3 py-1.5 rounded uppercase tracking-wider bg-darkBg">
+                    Interdit aux -18 ans
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LES TARIFS (UN POSITIONNEMENT ADAPTÉ ET JUSTE) -->
+    <section id="tarifs" class="py-24 bg-darkCard/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span data-i18n="rates-tag" class="text-neonBlue text-xs font-bold tracking-widest uppercase block mb-2">Finances &amp; Positionnement</span>
+                <h2 data-i18n="rates-title" class="font-title text-3xl md:text-4xl font-extrabold text-white mb-4">Des Tarifs Justes et Accessibles</h2>
+                <div class="w-16 h-1 bg-neonBlue mx-auto rounded"></div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-white/10 text-slate-400 text-sm">
+                            <th data-i18n="th-service" class="py-4 font-semibold">Service / Produit</th>
+                            <th data-i18n="th-low" class="py-4 font-semibold text-center">Bas du Marché</th>
+                            <th data-i18n="th-target" class="py-4 font-semibold text-center text-neonBlue">Notre Cible (Caféó)</th>
+                            <th data-i18n="th-high" class="py-4 font-semibold text-center">Haut du Marché / Starbucks</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5 text-sm">
+                        <tr>
+                            <td data-i18n="rate-row1" class="py-5 font-medium text-white">Café de Spécialité / Espresso</td>
+                            <td class="py-5 text-center text-slate-500">1,50 €</td>
+                            <td class="py-5 text-center text-neonBlue font-semibold text-base">2,20 €</td>
+                            <td class="py-5 text-center text-slate-500">3,20 €</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="rate-row2" class="py-5 font-medium text-white">Bubble Tea Customisé Complet</td>
+                            <td class="py-5 text-center text-slate-500">3,90 €</td>
+                            <td class="py-5 text-center text-neonBlue font-semibold text-base">4,80 €</td>
+                            <td class="py-5 text-center text-slate-500">6,50 €</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="rate-row3" class="py-5 font-medium text-white">Heure d'Accès Ordinateurs (Poste Pro)</td>
+                            <td class="py-5 text-center text-slate-500">1,50 €</td>
+                            <td class="py-5 text-center text-neonBlue font-semibold text-base">3,00 €</td>
+                            <td class="py-5 text-center text-slate-500">5,00 €</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="rate-row4" class="py-5 font-medium text-white">Location Box Réunion (Heure)</td>
+                            <td class="py-5 text-center text-slate-500">8,00 €</td>
+                            <td class="py-5 text-center text-neonBlue font-semibold text-base">15,00 €</td>
+                            <td class="py-5 text-center text-slate-500">25,00 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p data-i18n="rates-footer" class="text-center text-xs text-slate-400 mt-8">
+                * Notre positionnement de prix est calibré à mi-chemin entre le bas du marché et les grandes chaînes pour garantir une rentabilité solide tout en restant extrêmement attractif pour notre clientèle étudiante.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION FOIRE AUX QUESTIONS (Ajout de valeur stratégique académique) -->
+    <section id="faq" class="py-24 bg-darkBg">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span data-i18n="faq-tag" class="text-neonBlue text-xs font-bold tracking-widest uppercase block mb-2">Questions fréquentes</span>
+                <h2 data-i18n="faq-title" class="font-title text-3xl font-extrabold text-white mb-4">F.A.Q. Projet Caféó</h2>
+                <div class="w-16 h-1 bg-neonBlue mx-auto rounded"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <div class="bg-darkCard border border-white/5 rounded-2xl p-6 cursor-pointer select-none group" onclick="toggleFaq(1)">
+                    <div class="flex items-center justify-between">
+                        <h4 data-i18n="faq-q1" class="font-semibold text-white group-hover:text-neonBlue transition text-sm sm:text-base">Comment fonctionne l'accès aux ordinateurs pour les révisions ?</h4>
+                        <span id="faq-icon-1" class="text-slate-400 text-sm transition-transform duration-200"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div id="faq-ans-1" data-i18n="faq-a1" class="hidden mt-4 text-xs sm:text-sm text-slate-400 leading-relaxed pt-4 border-t border-white/5">
+                        L'accès s'effectue librement sans réservation préalable, ou en bloquant votre créneau sur ce site. Les ordinateurs sont équipés de toute la suite de bureautique classique, de logiciels de développement, ainsi que d'une large bibliothèque de jeux e-sports pour décompresser après les cours.
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="bg-darkCard border border-white/5 rounded-2xl p-6 cursor-pointer select-none group" onclick="toggleFaq(2)">
+                    <div class="flex items-center justify-between">
+                        <h4 data-i18n="faq-q2" class="font-semibold text-white group-hover:text-neonBlue transition text-sm sm:text-base">Pouvons-nous apporter de la nourriture extérieure dans les box de réunion ?</h4>
+                        <span id="faq-icon-2" class="text-slate-400 text-sm transition-transform duration-200"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div id="faq-ans-2" data-i18n="faq-a2" class="hidden mt-4 text-xs sm:text-sm text-slate-400 leading-relaxed pt-4 border-t border-white/5">
+                        Pour des raisons d'hygiène et pour soutenir le concept hybride, les boissons et encas extérieurs ne sont pas autorisés. Cependant, notre carte variée (Bubble Teas personnalisables, Cappuccinos faits main et petites collations gourmandes) est proposée à des tarifs spécialement étudiés pour être extrêmement abordables pour tous.
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="bg-darkCard border border-white/5 rounded-2xl p-6 cursor-pointer select-none group" onclick="toggleFaq(3)">
+                    <div class="flex items-center justify-between">
+                        <h4 data-i18n="faq-q3" class="font-semibold text-white group-hover:text-neonBlue transition text-sm sm:text-base">Quels types de subventions Caféó vise-t-il dans son modèle financier ?</h4>
+                        <span id="faq-icon-3" class="text-slate-400 text-sm transition-transform duration-200"><i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div id="faq-ans-3" data-i18n="faq-a3" class="hidden mt-4 text-xs sm:text-sm text-slate-400 leading-relaxed pt-4 border-t border-white/5">
+                        Dans le cadre de notre projet académique, nous ciblons des subventions territoriales d'aide à la création numérique pour les jeunes (Tiers-Lieux Régionaux), des aides de la Ville pour la promotion de jeunes humoristes locaux via la mini-scène, ainsi que le fonds national d'amorçage à l'innovation sociale.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (INFOS PRATIQUES, SUBVENTIONS ET LÉGAL - STYLE A PLAT SIMPLE) -->
+    <footer class="bg-darkBg pt-16 pb-8 border-t border-white/5 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12">
+            <!-- Colonne 1 : À Propos / Identité -->
+            <div>
+                <a href="#" class="font-title text-2xl font-extrabold tracking-wider mb-4 block">
+                    <span class="text-neonBlue neon-glow-blue">CAFÉ</span><span class="text-neonRed neon-glow-red">Ó</span>
+                </a>
+                <p data-i18n="footer-col1" class="text-xs text-slate-400 leading-relaxed mb-6">
+                    Caféó est un projet étudiant fictif visant à créer le premier concept-store physique de cybercafé hybride, mêlant technologie, boissons chaudes/froides fraîches et vie de quartier festive.
+                </p>
+                <!-- MEMBRES DU GROUPE MIS EN VALEUR DE MANIÈRE CLAIRE -->
+                <div class="border-t border-white/5 pt-4">
+                    <h5 data-i18n="footer-group-title" class="text-xs font-semibold text-neonBlue uppercase tracking-wider mb-2">Notre Équipe Projet</h5>
+                    <p class="text-xs text-white font-medium flex flex-wrap gap-x-2">
+                        <span>Diego</span> • <span>Océane</span> • <span>Evan</span> • <span>Kylian</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Colonne 2 : Contact et Adresse -->
+            <div>
+                <h4 data-i18n="footer-col2-title" class="font-title text-sm font-semibold uppercase tracking-wider text-slate-300 mb-4">Nous Trouver &amp; Écrire</h4>
+                <ul class="text-xs text-slate-400 space-y-3">
+                    <li><span class="text-neonBlue"><i class="fa-solid fa-location-dot"></i></span> <span data-i18n="footer-col2-addr">12 Avenue des Étudiants, 75005 Paris</span></li>
+                    <li><span class="text-neonBlue"><i class="fa-solid fa-envelope"></i></span> contact@cafeo.fr</li>
+                    <li><span class="text-neonBlue"><i class="fa-solid fa-phone"></i></span> +33 (0)1 23 45 67 89</li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Subventions & Juridique (A plat, Texte Simple comme requis) -->
+            <div>
+                <h4 data-i18n="footer-col3-title" class="font-title text-sm font-semibold uppercase tracking-wider text-slate-300 mb-4">Structure &amp; Subventions</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                    <strong data-i18n="footer-col3-item1-label">Forme Juridique :</strong> <span data-i18n="footer-col3-item1-val">SAS (Société par Actions Simplifiée) en cours d'élaboration de projet.</span>
+                </p>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    <strong data-i18n="footer-col3-item2-label">Financements visés :</strong> <span data-i18n="footer-col3-item2-val">Subventions territoriales pour l'insertion numérique des jeunes, aides régionales de développement des tiers-lieux et fonds d'amorçage d'innovation.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Mentions de bas de page -->
+        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500">
+            <p data-i18n="footer-copy">© 2026 Caféó. Tous droits réservés. Projet académique d'étudiants.</p>
+            <div class="flex gap-6 mt-4 sm:mt-0">
+                <span data-i18n="footer-link1">Mentions Légales Simplifiées</span>
+                <span data-i18n="footer-link2">CGU &amp; CGV</span>
+                <span data-i18n="footer-link3">Politique RGPD</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript simple pour gérer le simulateur de Bubble Tea, le calendrier et le sélecteur de langue -->
+    <script>
+        // TRADUCTIONS MULTILINGUES DYNAMIQUES (FR, ES, EN)
+        const translations = {
+            fr: {
+                "nav-concept": "Le Concept",
+                "nav-carte": "La Carte",
+                "nav-tech": "Espace Tech",
+                "nav-reservation": "Réservation",
+                "nav-scenes": "Événements & Scène",
+                "nav-tarifs": "Nos Tarifs",
+                "btn-reserve": "Réserver un PC / Salle",
+                "hero-tag": "⚡ L'espace hybride nouvelle génération",
+                "hero-title": "Travaillez dur. <br> <span class='text-neonBlue'>Chilliez</span> en grand. <br> <span class='text-neonRed'>Riez</span> souvent.",
+                "hero-desc": "Un cybercafé premium conçu pour les étudiants : setups PC ultra-performants, salles privées insonorisées, bubble teas personnalisables et une vraie scène de Stand-up en soirée.",
+                "btn-discover-carte": "Découvrir la Carte 🧋",
+                "btn-standup": "Prochaines soirées Stand-up 🎤",
+                "concept-title": "Un lieu. Trois facettes.",
+                "concept-subtitle": "Pourquoi choisir entre bosser, boire un coup et se divertir quand on peut tout faire au même endroit ?",
+                "concept-tech-title": "Secteur Technique",
+                "concept-tech-desc": "Des setups PC gamer équipés de cartes graphiques dernière génération et de la fibre ultra-rapide. Bossez vos cours ou lancez une partie dans des conditions parfaites.",
+                "concept-food-title": "Secteur Alimentaire",
+                "concept-food-desc": "Des boissons chaudes réconfortantes, des thés glacés ultra-frais et des Bubble Teas uniques, entièrement confectionnés par nos baristas.",
+                "concept-event-title": "Chill, Bar & Stand-Up",
+                "concept-event-desc": "Quand le soleil se couche, la lumière change. Notre bar s'active et notre mini-scène s'illumine pour accueillir de jeunes humoristes locaux pour des soirées inoubliables.",
+                "carte-tag": "Au menu de Caféó",
+                "carte-title": "Notre Carte Liquide",
+                "carte-hot-title": "Les Boissons Chaudes",
+                "hot-p1-title": "Café de Spécialité / Espresso",
+                "hot-p1-desc": "Un arabica sélectionné, aux arômes riches et ronds.",
+                "hot-p2-title": "Cappuccino Onctueux & Latte Art",
+                "hot-p2-desc": "Mousse de lait veloutée, espresso premium, motifs artistiques de chat faits main.",
+                "hot-p3-title": "Chocolat Chaud Gourmand",
+                "hot-p3-desc": "Chocolat fondu crémeux, servi bien chaud.",
+                "latte-caption": "Notre fameux Latte Art signature en forme de chat 🐱",
+                "carte-cold-title": "Thés Glacés Maison (Cold Brew)",
+                "cold-p1-title": "Thé Noir Signature",
+                "cold-p1-desc": "Infusé à froid pendant 12h, agrémenté de menthe et de citron frais.",
+                "cold-p2-title": "Thé Vert Glacé Pêche",
+                "cold-p2-desc": "Léger et délicat, à base de vrai coulis de pêche juteux.",
+                "cold-p3-title": "L'Infusion du Moment (Sans caféine)",
+                "cold-p3-desc": "Infusion aux fruits rouges et épices douces pour l'après-midi.",
+                "cold-caption": "Nos infusions froides bio préparées quotidiennement 🍋",
+                "boba-tag": "⭐ La star des révisions",
+                "boba-title": "Crée ton Bubble Tea unique",
+                "boba-desc": "Pour seulement 4,80 €, customise ta boisson selon ton envie du moment. Tu choisis ta base, ton parfum, tes toppings explosives, et nos baristas s'occupent du reste.",
+                "boba-sim-title": "Simulateur de Bubble Tea",
+                "boba-step1": "Étape 1 : Choisis ta Base",
+                "boba-step2": "Étape 2 : Customise tes Bobas (Billes)",
+                "boba-choice-label": "Votre choix :",
+                "tech-tag": "Côté Technique",
+                "tech-title": "Espaces de Travail & Performance",
+                "tech-pc-tag": "Zone Libre-Service",
+                "tech-pc-title": "Setups PC Gaming & Dev",
+                "tech-pc-desc": "Profitez de 20 postes informatiques haut de gamme. Écrans 144Hz, processeurs puissants, claviers mécaniques et souris ergonomiques. Tout est prêt pour vos rendus de projets ou vos parties de jeu.",
+                "tech-pc-feat": "Accès Fibre 2 Gb/s symétrique",
+                "tech-pc-price-tag": "Tarif étudiant",
+                "tech-pc-unit": "/ heure",
+                "tech-pc-btn": "Voir les packs",
+                "tech-room-tag": "Zone Collaborative",
+                "tech-room-title": "Salles Privées de Réunion",
+                "tech-room-desc": "Besoin de préparer un exposé à plusieurs ? Nos box insonorisés accueillent de 4 à 8 personnes et sont équipés de grands écrans connectés et de tableaux effaçables.",
+                "tech-room-feat": "Système de projection sans-fil inclus",
+                "tech-room-price-tag": "Tarif de groupe",
+                "tech-room-unit": "/ heure",
+                "tech-room-btn": "Réserver",
+                "res-tag": "Planifie ta session",
+                "res-title": "Réserver un Espace en 1 Clic",
+                "res-desc": "Gagne du temps et assure-toi d'avoir la meilleure place pour réviser ou collaborer.",
+                "res-field-name": "Ton Nom complet",
+                "res-field-email": "Adresse Email",
+                "res-field-service": "Type de service",
+                "res-field-duration": "Durée estimée",
+                "res-payment-info": "Le paiement s'effectue directement sur place par CB ou Lydia lors de ton arrivée. Pas de pré-paiement requis !",
+                "res-btn-submit": "Confirmer ma pré-réservation",
+                "res-success-title": "Réservation validée !",
+                "res-success-desc": "Un email de confirmation contenant votre code de réservation vous a été envoyé pour le présenter au barista lors de votre arrivée.",
+                "res-success-retry": "Faire une autre réservation",
+                "scene-tag": "Soirées & Bar de nuit",
+                "scene-title": "Mini-Scène, Stand-Up & Bar",
+                "scene-desc-title": "La Scène Découverte",
+                "scene-desc-para": "Chaque semaine, Caféó se transforme en scène ouverte pour accueillir des humoristes locaux en devenir (Stand-Up), des soirées d'échanges d'idées, des rencontres e-sport de groupe et de la musique acoustique en live.",
+                "scene-evt1-title": "Jeudis Stand-Up (20h - 22h)",
+                "scene-evt1-desc": "Venez découvrir les futurs talents de l'humour autour d'un cocktail ou d'un Bubble Tea.",
+                "scene-evt2-title": "Bar de Nuit & Rencontres Étudiantes",
+                "scene-evt2-desc": "Profitez de notre licence de boissons alcoolisées et softs pour décompresser de vos journées de cours.",
+                "cal-tag": "Le Programme",
+                "cal-title": "Calendrier de la Semaine",
+                "cal-desc": "Cliquez sur les jours de la semaine pour découvrir nos soirées thématiques, scènes ouvertes et tournois organisés pour les étudiants.",
+                "legal-warning-title": "Avertissement Législatif Obligatoire",
+                "legal-warning-desc": "L'abus d'alcool est dangereux pour la santé, à consommer avec modération. Vente et consommation d'alcool interdites aux mineurs de moins de 18 ans.",
+                "legal-warning-badge": "Interdit aux -18 ans",
+                "rates-tag": "Finances & Positionnement",
+                "rates-title": "Des Tarifs Justes et Accessibles",
+                "th-service": "Service / Produit",
+                "th-low": "Bas du Marché",
+                "th-target": "Notre Cible (Caféó)",
+                "th-high": "Haut du Marché / Starbucks",
+                "rate-row1": "Café de Spécialité / Espresso",
+                "rate-row2": "Bubble Tea Customisé Complet",
+                "rate-row3": "Heure d'Accès Ordinateurs (Poste Pro)",
+                "rate-row4": "Location Box Réunion (Heure)",
+                "rates-footer": "* Notre positionnement de prix est calibré à mi-chemin entre le bas du marché et les grandes chaînes pour garantir une rentabilité solide tout en restant extrêmement attractif pour notre clientèle étudiante.",
+                "faq-tag": "Questions fréquentes",
+                "faq-title": "F.A.Q. Projet Caféó",
+                "faq-q1": "Comment fonctionne l'accès aux ordinateurs pour les révisions ?",
+                "faq-a1": "L'accès s'effectue librement sans réservation préalable, ou en bloquant votre créneau sur ce site. Les ordinateurs sont équipés de toute la suite de bureautique classique, de logiciels de développement, ainsi que d'une large bibliothèque de jeux e-sports pour décompresser après les cours.",
+                "faq-q2": "Pouvons-nous apporter de la nourriture extérieure dans les box de réunion ?",
+                "faq-a2": "Pour des raisons d'hygiène et pour soutenir le concept hybride, les boissons et encas extérieurs ne sont pas autorisés. Cependant, notre carte variée (Bubble Teas personnalisables, Cappuccinos faits main et petites collations gourmandes) est proposée à des tarifs spécialement étudiés pour être extrêmement abordables pour tous.",
+                "faq-q3": "Quels types de subventions Caféó vise-t-il dans son modèle financier ?",
+                "faq-a3": "Dans le cadre de notre projet académique, nous ciblons des subventions territoriales d'aide à la création numérique pour les jeunes (Tiers-Lieux Régionaux), des aides de la Ville pour la promotion de jeunes humoristes locaux via la mini-scène, ainsi que le fonds national d'amorçage à l'innovation sociale.",
+                "footer-col1": "Caféó est un projet étudiant fictif visant à créer le premier concept-store physique de cybercafé hybride, mêlant technologie, boissons chaudes/froides fraîches et vie de quartier festive.",
+                "footer-group-title": "Notre Équipe Projet",
+                "footer-col2-title": "Nous Trouver & Écrire",
+                "footer-col2-addr": "12 Avenue des Étudiants, 75005 Paris",
+                "footer-col3-title": "Structure & Subventions",
+                "footer-col3-item1-label": "Forme Juridique :",
+                "footer-col3-item1-val": "SAS (Société par Actions Simplifiée) en cours d'élaboration de projet.",
+                "footer-col3-item2-label": "Financements visés :",
+                "footer-col3-item2-val": "Subventions territoriales pour l'insertion numérique des jeunes, aides régionales de développement des tiers-lieux et fonds d'amorçage d'innovation.",
+                "footer-copy": "© 2026 Caféó. Tous droits réservés. Projet académique d'étudiants.",
+                "footer-link1": "Mentions Légales Simplifiées",
+                "footer-link2": "CGU & CGV",
+                "footer-link3": "Politique RGPD"
+            },
+            es: {
+                "nav-concept": "El Concepto",
+                "nav-carte": "La Carta",
+                "nav-tech": "Espacio Tech",
+                "nav-reservation": "Reserva",
+                "nav-scenes": "Eventos y Escenario",
+                "nav-tarifs": "Tarifas",
+                "btn-reserve": "Reservar PC / Sala",
+                "hero-tag": "⚡ El espacio híbrido de nueva generación",
+                "hero-title": "Trabaja duro. <br> <span class='text-neonBlue'>Relájate</span> a lo grande. <br> <span class='text-neonRed'>Ríe</span> a menudo.",
+                "hero-desc": "Un cibercafé premium diseñado para estudiantes: configuraciones de PC de alto rendimiento, salas de reuniones privadas insonorizadas, tés de burbujas personalizables y un verdadero escenario de stand-up por la noche.",
+                "btn-discover-carte": "Ver la Carta 🧋",
+                "btn-standup": "Próximos shows de Stand-up 🎤",
+                "concept-title": "Un lugar. Tres facetas.",
+                "concept-subtitle": "¿Por qué elegir entre trabajar, tomar una copa y divertirse cuando puedes hacerlo todo en el mismo lugar?",
+                "concept-tech-title": "Sector Técnico",
+                "concept-tech-desc": "Equipos de PC para jugadores equipados con tarjetas gráficas de última generación y fibra ultrarrápida. Haz tus tareas o echa una partida en condiciones perfectas.",
+                "concept-food-title": "Sector Alimentario",
+                "concept-food-desc": "Reconfortantes bebidas calientes, tés helados ultrafrescos y Bubble Teas únicos, elaborados íntegramente por nuestros baristas.",
+                "concept-event-title": "Chill, Bar & Stand-Up",
+                "concept-event-desc": "Cuando el sol se pone, la luz cambia. Nuestro bar se activa y nuestro miniescenario se ilumina para acoger a jóvenes humoristas locales en noches inolvidables.",
+                "carte-tag": "En el menú de Caféó",
+                "carte-title": "Nuestra Carta Líquida",
+                "carte-hot-title": "Bebidas Calientes",
+                "hot-p1-title": "Café de Especialidad / Espresso",
+                "hot-p1-desc": "Un arábica seleccionado, con aromas ricos y redondos.",
+                "hot-p2-title": "Capuchino Cremoso y Arte del Latte",
+                "hot-p2-desc": "Espuma de leche aterciopelada, espresso de primera calidad, bonitos diseños de gatos hechos a mano.",
+                "hot-p3-title": "Chocolate Caliente Delicioso",
+                "hot-p3-desc": "Chocolate derretido cremoso, servido bien caliente.",
+                "latte-caption": "Nuestro famoso Arte del Latte con diseño de gato 🐱",
+                "carte-cold-title": "Tés Helados Caseros (Cold Brew)",
+                "cold-p1-title": "Té Negro de la Casa",
+                "cold-p1-desc": "Infusionado en frío durante 12 horas, decorado con menta y limón fresco.",
+                "cold-p2-title": "Té Verde Helado de Melocotón",
+                "cold-p2-desc": "Ligero y delicado, hecho con auténtico coulis de melocotón.",
+                "cold-p3-title": "La Infusión del Momento (Sin cafeína)",
+                "cold-p3-desc": "Infusión de frutos rojos y especias dulces para la tarde.",
+                "cold-caption": "Nuestras infusiones frías ecológicas preparadas a diario 🍋",
+                "boba-tag": "⭐ La estrella de las revisiones",
+                "boba-title": "Crea tu Bubble Tea único",
+                "boba-desc": "Por solo 4,80 €, personaliza tu bebida según tu antojo. Elige tu base, tu sabor, tus toppings explosivos y nuestros baristas se encargarán del resto.",
+                "boba-sim-title": "Simulador de Bubble Tea",
+                "boba-step1": "Paso 1: Elige tu Base",
+                "boba-step2": "Paso 2: Personaliza tus Bobas (Bolas)",
+                "boba-choice-label": "Tu elección:",
+                "tech-tag": "Lado Técnico",
+                "tech-title": "Espacios de Trabajo y Rendimiento",
+                "tech-pc-tag": "Zona de Autoservicio",
+                "tech-pc-title": "Setups de PC Gaming & Dev",
+                "tech-pc-desc": "Disfruta de 20 puestos informáticos de gama alta. Pantallas de 144Hz, potentes procesadores, teclados mecánicos y ratones ergonómicos. Todo listo para tus proyectos o tus partidas.",
+                "tech-pc-feat": "Acceso a Fibra simétrica de 2 Gb/s",
+                "tech-pc-price-tag": "Tarifa de estudiante",
+                "tech-pc-unit": "/ hora",
+                "tech-pc-btn": "Ver los paquetes",
+                "tech-room-tag": "Zona de Colaboración",
+                "tech-room-title": "Salas de Reuniones Privadas",
+                "tech-room-desc": "¿Necesitas preparar una exposición en grupo? Nuestras salas insonorizadas tienen capacidad para 4 a 8 personas y están equipadas con grandes pantallas conectadas y pizarras.",
+                "tech-room-feat": "Sistema de proyección inalámbrico incluido",
+                "tech-room-price-tag": "Tarifa de grupo",
+                "tech-room-unit": "/ hora",
+                "tech-room-btn": "Reservar ahora",
+                "res-tag": "Planifica tu sesión",
+                "res-title": "Reservar un Espacio en 1 Clic",
+                "res-desc": "Ahorra tiempo y asegúrate de tener el mejor lugar para estudiar o trabajar en grupo.",
+                "res-field-name": "Tu nombre completo",
+                "res-field-email": "Dirección de correo electrónico",
+                "res-field-service": "Tipo de servicio",
+                "res-field-duration": "Duración estimada",
+                "res-payment-info": "El pago se realiza directamente en el establecimiento con tarjeta o Lydia a tu llegada. ¡No se requiere pago por adelantado!",
+                "res-btn-submit": "Confirmar mi pre-reserva",
+                "res-success-title": "¡Reserva confirmada!",
+                "res-success-desc": "Se ha enviado un correo de confirmación con tu código de reserva para que se lo presentes al barista cuando llegues.",
+                "res-success-retry": "Hacer otra reserva",
+                "scene-tag": "Noches y Bar",
+                "scene-title": "Miniescenario, Stand-Up y Bar",
+                "scene-desc-title": "El Escenario del Descubrimiento",
+                "scene-desc-para": "Cada semana, Caféó se transforma en un escenario abierto para acoger a humoristas locales emergentes (Stand-Up), noches de debate, encuentros de e-sports y música acústica en directo.",
+                "scene-evt1-title": "Jueves de Stand-Up (20:00 - 22:00)",
+                "scene-evt1-desc": "Ven a descubrir a los futuros talentos de la comedia con un cóctel o un Bubble Tea.",
+                "scene-evt2-title": "Bar de Noche y Encuentros Estudiantiles",
+                "scene-evt2-desc": "Disfruta de nuestra licencia de bebidas alcohólicas y refrescos para relajarte tras las clases.",
+                "cal-tag": "El Programa",
+                "cal-title": "Calendario de la Semana",
+                "cal-desc": "Haz clic en los días de la semana para descubrir nuestras noches temáticas, escenarios abiertos y torneos organizados para estudiantes.",
+                "legal-warning-title": "Advertencia Legal Obligatoria",
+                "legal-warning-desc": "El abuso de alcohol es peligroso para la salud, consumir con moderación. Venta y consumo prohibidos a menores de 18 años.",
+                "legal-warning-badge": "Prohibido -18 años",
+                "rates-tag": "Finanzas y Posicionamiento",
+                "rates-title": "Tarifas Justas y Accesibles",
+                "th-service": "Servicio / Producto",
+                "th-low": "Bajo del Mercado",
+                "th-target": "Nuestro Objetivo (Caféó)",
+                "th-high": "Alto del Mercado / Starbucks",
+                "rate-row1": "Café de Especialidad / Espresso",
+                "rate-row2": "Bubble Tea Personalizado Completo",
+                "rate-row3": "Hora de Acceso a PC (Puesto Pro)",
+                "rate-row4": "Alquiler de Sala de Reunión (Hora)",
+                "rates-footer": "* Nuestro posicionamiento de precios está calculado a medio camino entre el bajo del mercado y las grandes cadenas para garantizar una rentabilidad sólida siendo muy atractivo para los estudiantes.",
+                "faq-tag": "Preguntas Frecuentes",
+                "faq-title": "F.A.Q. Proyecto Caféó",
+                "faq-q1": "¿Cómo funciona el acceso a los ordenadores para estudiar?",
+                "faq-a1": "El acceso es libre sin reserva previa, o bloqueando tu plaza en este sitio web. Los ordenadores cuentan con software de ofimática, desarrollo y videojuegos para relajarse tras las clases.",
+                "faq-q2": "¿Se puede traer comida del exterior a las salas de reunión?",
+                "faq-a2": "Por razones de higiene y para apoyar nuestro concepto, no se permite comida del exterior. Sin embargo, nuestra variada carta está adaptada con precios muy asequibles para todos.",
+                "faq-q3": "¿Qué tipo de subvenciones busca Caféó en su modelo?",
+                "faq-a3": "En el marco del proyecto, buscamos ayudas a la creación digital para jóvenes (Tier-Lieux), subvenciones locales para la promoción de artistas de comedia y fondos nacionales de innovación social.",
+                "footer-col1": "Caféó es un proyecto estudiantil ficticio para crear la primera tienda conceptual física de cibercafé híbrido, que combina tecnología, bebidas frescas y vida comunitaria.",
+                "footer-group-title": "Nuestro Equipo de Proyecto",
+                "footer-col2-title": "Dónde Encontrarnos",
+                "footer-col2-addr": "12 Avenue des Étudiants, 75005 París",
+                "footer-col3-title": "Estructura y Subvenciones",
+                "footer-col3-item1-label": "Forma Jurídica:",
+                "footer-col3-item1-val": "SAS (Sociedad por Acciones Simplificada) en fase de propuesta de proyecto.",
+                "footer-col3-item2-label": "Ayudas previstas:",
+                "footer-col3-item2-val": "Subvenciones locales para la inclusión digital, ayudas regionales para el desarrollo de espacios comunitarios y fondos de innovación.",
+                "footer-copy": "© 2026 Caféó. Todos los derechos reservados. Proyecto estudiantil.",
+                "footer-link1": "Aviso Legal Simplificado",
+                "footer-link2": "CGU y CGV",
+                "footer-link3": "Política de Privacidad"
+            },
+            en: {
+                "nav-concept": "The Concept",
+                "nav-carte": "The Menu",
+                "nav-tech": "Tech Space",
+                "nav-reservation": "Booking",
+                "nav-scenes": "Events & Stage",
+                "nav-tarifs": "Our Rates",
+                "btn-reserve": "Book a PC / Room",
+                "hero-tag": "⚡ The next-generation hybrid space",
+                "hero-title": "Work hard. <br> <span class='text-neonBlue'>Chill</span> big. <br> <span class='text-neonRed'>Laugh</span> often.",
+                "hero-desc": "A premium cybercafé designed for students: high-performance PC setups, soundproof private rooms, customizable bubble teas, and a real stand-up comedy stage at night.",
+                "btn-discover-carte": "Discover the Menu 🧋",
+                "btn-standup": "Upcoming Stand-up Nights 🎤",
+                "concept-title": "One space. Three facets.",
+                "concept-subtitle": "Why choose between working, having a drink, and having fun when you can do it all in the same place?",
+                "concept-tech-title": "Technical Sector",
+                "concept-tech-desc": "Gamer PC setups equipped with latest-generation graphics cards and ultra-fast fiber. Work on your classes or start a game in perfect conditions.",
+                "concept-food-title": "Food & Beverage",
+                "concept-food-desc": "Comforting hot drinks, ultra-fresh iced teas, and unique Bubble Teas, entirely crafted by our baristas.",
+                "concept-event-title": "Chill, Bar & Stand-Up",
+                "concept-event-desc": "When the sun goes down, the lights change. Our bar comes alive and our mini-stage lights up to host young local comedians for unforgettable nights.",
+                "carte-tag": "On Caféó's Menu",
+                "carte-title": "Our Liquid Menu",
+                "carte-hot-title": "Hot Beverages",
+                "hot-p1-title": "Specialty Coffee / Espresso",
+                "hot-p1-desc": "A selected Arabica with rich, rounded aromas.",
+                "hot-p2-title": "Creamy Cappuccino & Latte Art",
+                "hot-p2-desc": "Velvety milk foam, premium espresso, and handmade cute cat designs.",
+                "hot-p3-title": "Gourmet Hot Chocolate",
+                "hot-p3-desc": "Creamy melted chocolate, served nice and hot.",
+                "latte-caption": "Our famous signature cat Latte Art 🐱",
+                "carte-cold-title": "Homemade Iced Teas (Cold Brew)",
+                "cold-p1-title": "Signature Black Tea",
+                "cold-p1-desc": "Cold-brewed for 12 hours, served with mint and fresh lemon.",
+                "cold-p2-title": "Peach Green Iced Tea",
+                "cold-p2-desc": "Light and delicate, made with real peach coulis.",
+                "cold-p3-title": "Brew of the Moment (Caffeine-free)",
+                "cold-p3-desc": "Infusion of red berries and sweet spices for the afternoon.",
+                "cold-caption": "Our organic cold infusions prepared daily 🍋",
+                "boba-tag": "⭐ The star of study sessions",
+                "boba-title": "Create your unique Bubble Tea",
+                "boba-desc": "For only €4.80, customize your drink to match your mood. Choose your base, flavor, and popping boba toppings, and our baristas do the rest.",
+                "boba-sim-title": "Bubble Tea Simulator",
+                "boba-step1": "Step 1: Choose your Base",
+                "boba-step2": "Step 2: Customize your Bobas (Pearls)",
+                "boba-choice-label": "Your choice:",
+                "tech-tag": "Tech Side",
+                "tech-title": "Workspaces & Performance",
+                "tech-pc-tag": "Self-Service Zone",
+                "tech-pc-title": "Gaming & Dev PC Setups",
+                "tech-pc-desc": "Enjoy 20 high-end computer stations. 144Hz screens, powerful processors, mechanical keyboards, and ergonomic mice. Ready for your projects or games.",
+                "tech-pc-feat": "2 Gbps symmetrical Fiber access",
+                "tech-pc-price-tag": "Student rate",
+                "tech-pc-unit": "/ hour",
+                "tech-pc-btn": "See packages",
+                "tech-room-tag": "Collaborative Zone",
+                "tech-room-title": "Private Meeting Rooms",
+                "tech-room-desc": "Need to prepare a group presentation? Our soundproof boxes accommodate 4 to 8 people and are equipped with large connected screens and whiteboards.",
+                "tech-room-feat": "Wireless projection system included",
+                "tech-room-price-tag": "Group rate",
+                "tech-room-unit": "/ hour",
+                "tech-room-btn": "Book a room",
+                "res-tag": "Plan your session",
+                "res-title": "Book a Space in 1 Click",
+                "res-desc": "Save time and secure the best spot to study or collaborate.",
+                "res-field-name": "Your full name",
+                "res-field-email": "Email Address",
+                "res-field-service": "Type of service",
+                "res-field-duration": "Estimated duration",
+                "res-payment-info": "Payment is made directly on-site by card or Lydia upon arrival. No pre-payment required!",
+                "res-btn-submit": "Confirm my pre-booking",
+                "res-success-title": "Booking confirmed!",
+                "res-success-desc": "A confirmation email containing your booking code has been sent to present to the barista upon arrival.",
+                "res-success-retry": "Make another booking",
+                "scene-tag": "Evenings & Night Bar",
+                "scene-title": "Mini-Stage, Stand-Up & Bar",
+                "scene-desc-title": "The Discovery Stage",
+                "scene-desc-para": "Each week, Caféó transforms into an open stage to welcome emerging local comedians (Stand-Up), debate nights, e-sports meetups, and live acoustic music.",
+                "scene-evt1-title": "Stand-Up Thursdays (8pm - 10pm)",
+                "scene-evt1-desc": "Come discover future comedy talents over a cocktail or a Bubble Tea.",
+                "scene-evt2-title": "Night Bar & Student Socials",
+                "scene-evt2-desc": "Enjoy our license for alcoholic drinks and softs to unwind after classes.",
+                "cal-tag": "The Schedule",
+                "cal-title": "Weekly Calendar",
+                "cal-desc": "Click on the days of the week to discover our themed nights, open stages, and tournaments organized for students.",
+                "legal-warning-title": "Mandatory Legal Warning",
+                "legal-warning-desc": "Alcohol abuse is dangerous for your health, consume in moderation. Sale and consumption forbidden to minors under 18.",
+                "legal-warning-badge": "Forbidden under 18",
+                "rates-tag": "Finances & Positioning",
+                "rates-title": "Fair and Accessible Rates",
+                "th-service": "Service / Product",
+                "th-low": "Market Low",
+                "th-target": "Our Target (Caféó)",
+                "th-high": "Market High / Starbucks",
+                "rate-row1": "Specialty Coffee / Espresso",
+                "rate-row2": "Complete Custom Bubble Tea",
+                "rate-row3": "PC Access Hour (Pro Station)",
+                "rate-row4": "Meeting Box Rental (Hour)",
+                "rates-footer": "* Our price positioning is calibrated halfway between market low and major chains to ensure strong profitability while remaining highly attractive for students.",
+                "faq-tag": "Frequently Asked Questions",
+                "faq-title": "Caféó Project F.A.Q.",
+                "faq-q1": "How does computer access work for studying?",
+                "faq-a1": "Access is free without prior booking, or by locking your slot on this website. Computers are equipped with office, development, and gaming software to unwind after classes.",
+                "faq-q2": "Can we bring outside food into the meeting boxes?",
+                "faq-a2": "For hygiene reasons and to support our hybrid concept, outside food is not allowed. However, our varied menu is priced affordably for everyone.",
+                "faq-q3": "What types of subsidies does Caféó target in its model?",
+                "faq-a3": "As part of our academic project, we target local subsidies for digital youth creation (Tiers-Lieux), city grants for local comedians, and national social innovation funds.",
+                "footer-col1": "Caféó is a fictional student project aimed at creating the first physical hybrid cybercafé concept store, blending technology, fresh drinks, and festive community life.",
+                "footer-group-title": "Our Project Team",
+                "footer-col2-title": "Find Us & Write",
+                "footer-col2-addr": "12 Avenue des Étudiants, 75005 Paris",
+                "footer-col3-title": "Structure & Grants",
+                "footer-col3-item1-label": "Legal Structure:",
+                "footer-col3-item1-val": "SAS (Simplified Joint Stock Company) currently in project proposal phase.",
+                "footer-col3-item2-label": "Targeted funding:",
+                "footer-col3-item2-val": "Local grants for digital inclusion, regional funds for community space development, and innovation funds.",
+                "footer-copy": "© 2026 Caféó. All rights reserved. Student academic project.",
+                "footer-link1": "Simplified Legal Notice",
+                "footer-link2": "T&C and Privacy",
+                "footer-link3": "GDPR Policy"
+            }
+        };
+
+        // Base de données des événements hebdomadaires fictifs (Traductions locales associées)
+        const weeklyEvents = {
+            lun: {
+                fr: { tag: "💻 E-Sport & Gaming", time: "18h00 - 21h30", title: "Tournoi Gaming : FC 24 & Smash Bros", desc: "Rejoignez-nous en solo ou en groupe. Inscription gratuite sur place, boissons fraîches et gourmandises à gagner pour le top 3 ! Matériel et manettes de jeu fournis." },
+                es: { tag: "💻 E-Sport & Gaming", time: "18:00 - 21:30", title: "Torneo de Videojuegos: FC 24 & Smash Bros", desc: "Únete en solitario o en grupo. ¡Inscripción gratuita en el lugar, refrescos y dulces para los 3 mejores! Mandos y equipos proporcionados." },
+                en: { tag: "💻 E-Sport & Gaming", time: "6:00 PM - 9:30 PM", title: "Gaming Tournament: FC 24 & Smash Bros", desc: "Join solo or in a group. Free registration on-site, cool drinks and treats to win for the top 3! Equipment and gamepads provided." },
+                type: "blue"
+            },
+            mar: {
+                fr: { tag: "📚 Co-working & Focus", time: "14h00 - 18h00", title: "Atelier Projets : Entraide Étudiante", desc: "Besoin d'un coup de main pour vos devoirs, rapports ou projets de création d'entreprise ? Partage d'idées, entraide et réduction de -10% sur tous les thés glacés pendant l'atelier." },
+                es: { tag: "📚 Co-working & Focus", time: "14:00 - 18:00", title: "Taller de Proyectos: Ayuda Estudiantil", desc: "¿Necesitas ayuda con tus tareas o proyectos de creación de empresas? Intercambio de ideas, apoyo mutuo y un -10% de descuento en tés helados." },
+                en: { tag: "📚 Co-working & Focus", time: "2:00 PM - 6:00 PM", title: "Project Workshop: Student Support", desc: "Need a hand with homework, reports, or business projects? Share ideas, get support, and enjoy 10% off all iced teas during the workshop." },
+                type: "blue"
+            },
+            mer: {
+                fr: { tag: "🎲 Jeux de Société & Chill", time: "19h00 - 22h30", title: "Soirée Jeux de Plateau & Socializing", desc: "Dépoussiérez vos compétences de stratégie ! Jeux modernes et classiques à disposition au bar. Venez rencontrer d'autres étudiants de la ville dans une ambiance ultra chaleureuse." },
+                es: { tag: "🎲 Juegos de Mesa & Chill", time: "19:00 - 22:30", title: "Noche de Juegos de Mesa & Socialización", desc: "¡Demuestra tus habilidades estratégicas! Juegos de mesa modernos y clásicos disponibles. Conoce a otros estudiantes de la ciudad en un gran ambiente." },
+                en: { tag: "🎲 Board Games & Chill", time: "7:00 PM - 10:30 PM", title: "Board Games & Socializing Night", desc: "Dust off your strategy skills! Modern and classic board games available at the bar. Come meet other students from the city in a warm, welcoming vibe." },
+                type: "blue"
+            },
+            jeu: {
+                fr: { tag: "🎤 Stand-Up & Humour", time: "20h00 - 22h00", title: "Caféó Comedy Club - Scène Ouverte", desc: "La star de la semaine ! Venez rire devant 5 artistes locaux émergents. Entrée gratuite avec consommation, sortie au chapeau pour soutenir les artistes." },
+                es: { tag: "🎤 Stand-Up & Humor", time: "20:00 - 22:00", title: "Caféó Comedy Club - Escenario Abierto", desc: "¡La estrella de la semana! Ven a reír con 5 comediantes locales emergentes. Entrada libre con consumición obligatoria, aportación voluntaria al final." },
+                en: { tag: "🎤 Stand-Up & Comedy", time: "8:00 PM - 10:00 PM", title: "Caféó Comedy Club - Open Mic", desc: "The highlight of the week! Come laugh at 5 emerging local stand-up artists. Free entry with drink, bucket collection at the end to support the artists." },
+                type: "red"
+            },
+            ven: {
+                fr: { tag: "🎵 Live Music & Acoustique", time: "20h30 - 23h00", title: "Session Acoustique : Jazz & Pop Covers", desc: "Installez-vous confortablement avec un Bubble Tea ou un cocktail. Un duo de musiciens locaux revisite les plus grands classiques dans une ambiance cosy tamisée." },
+                es: { tag: "🎵 Música en Vivo & Acústica", time: "20:30 - 23:00", title: "Sesión Acústica: Jazz & Pop Covers", desc: "Ponte cómodo con un Bubble Tea o un cóctel. Un dúo de músicos locales versiona grandes clásicos en un ambiente acogedor y relajado." },
+                en: { tag: "🎵 Live Music & Acoustic", time: "8:30 PM - 11:00 PM", title: "Acoustic Session: Jazz & Pop Covers", desc: "Get comfortable with a Bubble Tea or a cocktail. A duo of local musicians performs acoustic versions of popular classics in a cozy, dimmed environment." },
+                type: "red"
+            },
+            sam: {
+                fr: { tag: "🍻 Soirée Chill & Mix", time: "21h00 - 01h00", title: "Samedi Mix : DJ Set Local", desc: "Un set de musiques électroniques et disco chaleureux pour décompresser complètement du stress des examens. L'accès est interdit aux moins de 18 ans pour la vente de boissons alcoolisées." },
+                es: { tag: "🍻 Noche de Chill & Mix", time: "21:00 - 01:00", title: "Sábado de Mix: DJ Set Local", desc: "Una sesión de música electrónica y disco muy acogedora para desconectar del estrés de los exámenes. Prohibido el acceso a menores de 18 años por venta de alcohol." },
+                en: { tag: "🍻 Chill & Mix Night", time: "9:00 PM - 1:00 AM", title: "Saturday Mix: Local DJ Set", desc: "A cozy electronic and disco music set to fully unwind from exam stress. Access restricted to 18+ due to alcoholic beverage sales." },
+                type: "red"
+            },
+            dim: {
+                fr: { tag: "☕ Relax & Gaming Retro", time: "12h00 - 17h00", title: "Sunday Retro-Gaming & Brunch", desc: "Un dimanche détente autour de consoles rétro (NES, MegaDrive, N64) en accès libre. Idéal pour commencer la semaine de bonne humeur en buvant notre café de spécialité." },
+                es: { tag: "☕ Relax & Gaming Retro", time: "12:00 - 17:00", title: "Domingo de Retro-Gaming & Brunch", desc: "Un domingo de relax con consolas retro (NES, MegaDrive, N64) en acceso libre. Ideal para empezar la semana con buen humor tomando un café." },
+                en: { tag: "☕ Relax & Retro Gaming", time: "12:00 PM - 5:00 PM", title: "Sunday Retro-Gaming & Brunch", desc: "A relaxing Sunday featuring retro consoles (NES, MegaDrive, N64) in free play. Perfect to start your week in high spirits while sipping our specialty coffee." },
+                type: "blue"
+            }
+        };
+
+        // Variable globale pour stocker la langue courante (français par défaut)
+        let currentLang = 'fr';
+        let selectedDayCode = 'lun';
+
+        // Fonction pour mettre à jour la langue du site entier
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // 1. Mettre à jour l'apparence des boutons de sélection de langue
+            const langButtons = ['fr', 'es', 'en'];
+            langButtons.forEach(l => {
+                const btn = document.getElementById(`lang-${l}`);
+                if (l === lang) {
+                    btn.className = "px-2.5 py-1 rounded-full text-[10px] font-bold transition uppercase bg-neonBlue text-darkBg";
+                } else {
+                    btn.className = "px-2.5 py-1 rounded-full text-[10px] font-bold transition uppercase text-slate-400 hover:text-white";
+                }
+            });
+
+            // 2. Traduire tous les éléments avec l'attribut data-i18n
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // 3. Mettre à jour le calendrier dans la bonne langue
+            selectDay(selectedDayCode);
+        }
+
+        // Fonction pour changer le jour sélectionné du calendrier
+        function selectDay(dayCode) {
+            selectedDayCode = dayCode;
+            
+            // Retirer le style "actif" de tous les boutons de jour
+            const buttons = document.querySelectorAll('.day-btn');
+            buttons.forEach(btn => {
+                btn.className = "py-3 px-2 rounded-xl text-center border text-xs font-semibold transition day-btn bg-white/5 border-white/10 text-slate-400 hover:border-white/20";
+            });
+
+            // Récupérer l'élément cliqué et lui appliquer le style actif néon correspondant au type d'événement
+            const activeBtn = document.getElementById(`btn-${dayCode}`);
+            const event = weeklyEvents[dayCode];
+            const eventDetails = event[currentLang]; // Traduction du jour
+
+            if (event.type === 'red') {
+                activeBtn.className = "py-3 px-2 rounded-xl text-center border text-xs font-semibold transition day-btn bg-neonRed/10 border-neonRed text-white active-day";
+            } else {
+                activeBtn.className = "py-3 px-2 rounded-xl text-center border text-xs font-semibold transition day-btn bg-neonBlue/10 border-neonBlue text-white active-day";
+            }
+
+            // Mettre à jour le contenu d'affichage de l'événement
+            const contentBox = document.getElementById('event-content');
+            const tagColorClass = event.type === 'red' ? 'bg-neonRed/10 text-neonRed' : 'bg-neonBlue/10 text-neonBlue';
+            
+            contentBox.innerHTML = `
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="${tagColorClass} text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">${eventDetails.tag}</span>
+                    <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i> ${eventDetails.time}</span>
+                </div>
+                <h4 class="font-title text-xl font-bold text-white mb-2">${eventDetails.title}</h4>
+                <p class="text-sm text-slate-400">${eventDetails.desc}</p>
+            `;
+        }
+
+        // Gestion du simulateur de Bubble Tea
+        function selectChoice(type, element, textValue) {
+            const selectorId = type === 'base' ? 'base-selector' : 'boba-selector';
+            const buttons = document.querySelectorAll(`#${selectorId} button`);
+            buttons.forEach(btn => {
+                btn.classList.remove('border-neonBlue', 'bg-neonBlue/10', 'active-choice');
+            });
+
+            element.classList.add('border-neonBlue', 'bg-neonBlue/10', 'active-choice');
+
+            const baseBtn = document.querySelector('#base-selector button.active-choice');
+            const bobaBtn = document.querySelector('#boba-selector button.active-choice');
+            
+            if (baseBtn && bobaBtn) {
+                const baseValue = baseBtn.innerText.trim();
+                const bobaValue = bobaBtn.innerText.trim();
+                document.getElementById('bubble-tea-recipe').innerText = `${baseValue} + ${bobaValue}`;
+            }
+        }
+
+        // Gestion de la réservation fictive
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            document.getElementById('booking-form').classList.add('hidden');
+            document.getElementById('booking-success').classList.remove('hidden');
+        }
+
+        function resetBookingForm() {
+            document.getElementById('booking-form').reset();
+            document.getElementById('booking-form').classList.remove('hidden');
+            document.getElementById('booking-success').classList.add('hidden');
+        }
+
+        // Gestion de l'affichage de la FAQ accordéon
+        function toggleFaq(id) {
+            const ans = document.getElementById(`faq-ans-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                ans.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Au lancement de la page, configurer le calendrier par défaut
+        window.onload = function() {
+            selectDay('lun');
+        };
+    </script>
+</body>
+</html>
